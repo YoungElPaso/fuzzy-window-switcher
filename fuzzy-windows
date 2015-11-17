@@ -123,6 +123,9 @@ class FuzzyWindow(Gtk.Window):
         # Window is initially hidden
         self.hidden = True
 
+        # Set window opacity.
+        self.set_opacity(0.9)
+
         # Set up the vbox
         self.vbox = Gtk.Box(spacing=10)
         self.vbox.set_orientation(Gtk.Orientation.VERTICAL)
@@ -279,7 +282,7 @@ class Config:
             self.getOption('always_show_windows', [])
         )
         self.width = int(self.getOption('width', 700))
-        self.height = int(self.getOption('height', 200))
+        self.height = int(self.getOption('height', 300))
         self.ignored_window_types = self.getIgnoredWindowTypes()
 
     def getOption(self, option_name, default_value):
